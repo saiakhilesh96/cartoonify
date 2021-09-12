@@ -1,6 +1,8 @@
 # cartoonify
 cartoonizing video in real-time
-
+pre-requisites: openCV
+compilation: g++ cartoonize.cpp -o cartoon `pkg-config --cflags --libs opencv`
+execution: ./cartoon
 This program accesses the webcam and renders the cartoonized version of the person viewing it, we have two types of display. One is sketch mode of display and the other is a colored cartoon display. Using the keyboard inputs we can change the mode of view (sketch or cartoon).
 The procedure for cartoonizing is as follows:
 1. Convert the actual image into grayscale image.
@@ -13,5 +15,6 @@ The procedure for cartoonizing is as follows:
 edges sharp.
 8. Convert the bilateral filter image to color image.
 9. Using bitwise and operator on both the input frame and the converted color image.
+
 The above steps when executed cartoonizes an input image into its cartoonized version.
 If we want to view sketch mode, we can display the bilateral image itself.
